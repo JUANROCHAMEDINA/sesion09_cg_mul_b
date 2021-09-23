@@ -9,18 +9,22 @@ background-color: #ffffff;
 margin: 0;
 overflow: hidden;
 }
+
 </style >
 </head>
 <body>
 // <script src="https://ajax.googleapis.com/ajax/libs/threejs/r76/three.min.js "></script >
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/95/three.min.js "></script >
 <script>
+
+
 var camera, scene, renderer;
 var geometry, material, mesh;
 var clock;
 
 
 function init() {
+  
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
@@ -37,7 +41,7 @@ function init() {
     scene.add(axesHelper);
 
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
-    camera.position.set(2, 3, -3);
+    camera.position.set(0, 0, 20);
     camera.lookAt(mesh.position);
     clock = new THREE.Clock();
     window.addEventListener('resize', onWindowResize, false);
@@ -46,6 +50,7 @@ function init() {
 var dir = 1;
 
 function animate() {
+  
     requestAnimationFrame(animate);
     var delta = clock.getDelta();
     mesh.rotation.x += delta * 0.5;
@@ -61,6 +66,7 @@ function animate() {
 }
 
 function onWindowResize() {
+  
     windowHalfX = window.innerWidth / 2;
     windowHalfY = window.innerHeight / 2;
     camera.aspect = window.innerWidth / window.innerHeight;
@@ -68,7 +74,9 @@ function onWindowResize() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 
 }
+
 init();
+
 renderer.render(scene,camera);
 ///animate();
 </script >
