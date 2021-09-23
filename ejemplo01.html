@@ -40,8 +40,8 @@ function init() {
     const axesHelper = new THREE.AxesHelper( 5 );
     scene.add(axesHelper);
 
-    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
-    camera.position.set(0, 0, 20);
+    camera = new THREE.PerspectiveCamera(10, window.innerWidth / window.innerHeight, 0.1, 100);
+    camera.position.set(0, 0, 40);
     camera.lookAt(mesh.position);
     clock = new THREE.Clock();
     window.addEventListener('resize', onWindowResize, false);
